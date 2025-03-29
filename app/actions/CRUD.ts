@@ -1,6 +1,5 @@
 "use server";
 import { Builder } from "xml2js";
-import fs from 'node:fs';
 
 let deckList = [] as any; // Liste globale en m�moire
 
