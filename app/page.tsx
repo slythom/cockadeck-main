@@ -1,7 +1,7 @@
 import Form from "./components/Form";
 import ExportButton from "./components/ExportButton";
 
-export default function HomePage() {
+export default async function HomePage() {
   return (
     <div>
       <Form />

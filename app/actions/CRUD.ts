@@ -1,7 +1,7 @@
 "use server";
 import { Builder } from "xml2js";
 
-let deckList = [] as any; // Liste globale en m�moire
+let deckList = [] as any; // Liste globale en memoire
 
 export async function createDeck(formData: FormData) {
   const cardQty = formData.get("cardqty");
@@ -12,7 +12,8 @@ export async function createDeck(formData: FormData) {
   );
   const result = await response.json();
   const cardName = result.name;
-  deckList.push({ cardQty, cardName });
+  const cardImage = result.image_uris;
+  deckList.push({ cardQty, cardName, cardImage });
   return deckList;
 }
 
