@@ -1,4 +1,6 @@
 "use server";
+
+import { revalidatePath } from "next/cache";
 import { Builder } from "xml2js";
 
 let deckList = [] as any; // Liste globale en memoire
@@ -12,9 +14,14 @@ export async function createDeck(formData: FormData) {
   );
   const result = await response.json();
   const cardName = result.name;
-  const cardImage = result.image_uris;
+  const cardImage = result.image_uris.small;
   deckList.push({ cardQty, cardName, cardImage });
+  revalidatePath("/");
   return deckList;
+}
+
+export async function getDeckDetails() {
+  return deckList
 }
 
 // CREATION XML
