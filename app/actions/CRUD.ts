@@ -14,7 +14,7 @@ export async function createDeck(formData: FormData) {
   );
   const result = await response.json();
   const cardName = result.name;
-  const cardImage = result.image_uris.small;
+  const cardImage = result.image_uris.normal;
   deckList.push({ cardQty, cardName, cardImage });
   revalidatePath("/");
   return deckList;
