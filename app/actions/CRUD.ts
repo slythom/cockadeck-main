@@ -24,6 +24,11 @@ export async function getDeckDetails() {
   return deckList
 }
 
+export async function totalCardQty() {
+  const totalCardQty = deckList.reduce((sum: number, card: any) => sum + Number(card.cardQty), 0);
+  return totalCardQty;
+}
+
 // CREATION XML
 export async function handleExport() {
   const xmlEntries = {
