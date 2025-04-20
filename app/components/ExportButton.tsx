@@ -31,8 +31,8 @@ export default function ExportButton() {
       // Clean up
       window.URL.revokeObjectURL(url);
       document.body.removeChild(a);
-    } catch (error) {
-      console.error('Error downloading deck:', error);
+    } catch (error: unknown) {
+      console.error('Error downloading deck:', error instanceof Error ? error.message : 'Unknown error');
     }
   };
 
