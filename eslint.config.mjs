@@ -15,6 +15,7 @@ const eslintConfig = [
     rules: {
       "@next/next/no-img-element": "off", // Disable the img element warning
       "@typescript-eslint/no-explicit-any": "off", // Disable the any type warning
+      "prefer-const": "off", // Disable the prefer-const warning
     }
   }
 ];

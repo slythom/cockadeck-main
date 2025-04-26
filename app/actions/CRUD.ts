@@ -3,7 +3,7 @@
 import { revalidatePath } from "next/cache";
 import { Builder } from "xml2js";
 
-const deckList = [] as any; // Liste globale en memoire
+let deckList = [] as any; // Liste globale en memoire
 
 export async function createDeck(formData: FormData) {
   const cardQty = formData.get("cardqty");
