@@ -41,7 +41,7 @@ export default function ExportButton() {
       onClick={downloadDeck}
       className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors"
     >
-      Export Deck
+      Exporter le deck
     </button>
   );
 }
